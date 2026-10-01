@@ -1,0 +1,6 @@
+.venv/
+.streamlit/secrets.toml
+chat_store/
+__pycache__/
+chatbot.py
+querybot.py
