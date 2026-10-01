@@ -51,6 +51,9 @@ MAX_INPUT_CHARS = 500
 
 st.title("🤖 My Chatbot")
 use_search = st.sidebar.checkbox("Use web search (recent info)", value=True)
+if "HF_TOKEN" not in st.secrets:
+    st.error("HF_TOKEN is missing. Add it in Manage app → Settings → Secrets.")
+    st.stop()
 
 client = InferenceClient(model=MODEL, provider="auto", token=st.secrets["HF_TOKEN"])
 
